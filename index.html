@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" rel="icon" href="src/img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Wordle PPY</title>
+ 	<link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <main>
+        <section class="section">
+            <div class="title_div">
+                <h1 class="title">Wordle PPY</h1>
+             </div>
+            <div class="content">
+                <div class="inherit">
+                    <div>
+                        <input type="text" id="guess-input" maxlength="5" type="text" placeholder="Escribe una palabra">
+                    </div>
+                    <div>
+                        <button id="guess-button">
+                            <span class="material-symbols-outlined">
+                            person_play
+                            </span>  Intentalo
+                        </button>
+                    </div>
+                </div>
+                <div id="grid"></div>
+                <div class="guesss">
+                    <p id="guesses" class="textt"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

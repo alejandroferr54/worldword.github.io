@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/**/
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('src/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 5rem;
+    max-height: 100%;
+    max-width: 	100%;
+    overflow: hidden;
+  }
+body::-webkit-scrollbar {
+  width: 0;
+ }
+/* MEDIDAS PARA TELEFONO*/
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    padding: 1rem;
+    backdrop-filter: invert(80%);
+  }
+    #guess-input {
+      display: block;
+      margin: 0 auto 20px;
+      width: 205px;
+      border: 2px;
+      padding: 12px;
+      font-size: 21px;
+      backdrop-filter: invert(80%);
+      color: #000000;
+    }
+
+  
+ 
+  #guess-button {
+    display: block;
+    font-family: "Madimi One", sans-serif;
+    font-style: normal;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    backdrop-filter: invert(80%);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+  }
+     
+  button:active {
+      transform: scale(1.1);
+  }
+     
+
+     
+  .row{
+      margin-bottom: 10px;
+      align-items: center;
+  }
+     
+  .input-area{
+      margin: 30px;
+  }
+
+  #grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+    span {
+      align-items: center;
+      vertical-align: middle;
+    }
+    .row {
+      display: table;
+      border-spacing: 0.4rem;
+      gap: 0.90rem;
+      
+      
+    }
+    
+    .letter {
+      
+      display: table-cell;
+      text-align: center;
+      border-spacing: 2rem;
+      vertical-align: middle;
+      font-size: 28px;
+      font-weight: 700;
+      height: 56px;
+      text-transform: uppercase;
+      width: 56px;
+      border-radius: 5px;
+  }
+
+  .guesss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .textt {
+    margin-top: -1rem;
+    display: flex;
+    color: white;
+    font-size: 1.5rem;
+    justify-content: center;
+    width: 28rem;
+    padding: 1rem;
+    background-color: transparent;
+    backdrop-filter: none;
+    background-size: 50% 50%;
+    
+    text-align: center;
+  }
+
+
+
+
+
+
+
+
+@media (min-width: 350px) {
+  .title {
+    font-family: "Anton", sans-serif;
+    font-style: normal;
+  }
+  body {
+    margin: 1.2rem;
+  }
+  .textt {
+    margin-top: -0.20rem;
+  }
+
+  .letter { 
+    margin-top: -2rem;
+  }
+  #guess-button {
+    display: block;
+    font-family: "Madimi One", sans-serif;
+    width: 229px;
+    font-style: normal;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    margin-bottom: -1rem;
+    border-radius: 3px;
+  }
+     
+}
+  
+
+/*RESPONSIVE, MEDIDAS PARA TABLET*/
+  @media (min-width: 767px) {
+    /*SECCIÓN PRINCIPAL, SE DIVIDEN AMBOS ELEMENTOS*/
+    #section {
+      display: flexbox;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: auto;
+      position: relative;
+    }
+    .title_div {
+      float:left;
+      margin-left: -70px;
+      width: 15%;
+    }
+    .title {
+      margin-left: 7rem;
+      font-family: "Anton", sans-serif;
+      font-style: normal;
+      writing-mode: vertical-rl;
+      font-size: 4rem;
+      width: 70%;
+      height: 60%;
+      white-space: pre;
+      
+    }
+
+    .content {
+      margin-top: 4rem;
+      width: 85%;
+      float: right;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+    .inherit {
+      display: flex;
+      justify-content: center;
+
+    }
+    #guess-input {
+      padding: 12px;
+      font-size: 21px;
+      background-color: #757370;
+      color: #ffffff;
+      border-left: 10px;
+      border-left-color: #f11e1e;
+    }
+
+    #guess-button {
+      display: block;
+      margin-left: -1rem;
+      padding: 10px 20px;
+      height: 49px;
+      font-size: 21px;
+      background-color: #494846;
+      color: #fff;
+      border: 1rem;
+    }
+
+
+    span {
+      align-items: center;
+      vertical-align: middle;
+    }
+    .row {
+      display: table;
+      border-spacing: 0.4rem;
+      gap: 1rem;
+      
+      
+    }
+    
+    .letter {
+      
+      display: table-cell;
+      text-align: center;
+      border-spacing: 2rem;
+      vertical-align: middle;
+      font-size: 28px;
+      font-weight: 700;
+      height: 56px;
+      text-transform: uppercase;
+      width: 56px;
+      border-radius: 5px;
+  }}
+
+
+
+
+  /*MEDIDA PARA LAPTOPS Y PCS*/
+  @media (min-width: 1024px) {
+    #section {
+      display: flexbox;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: auto;
+      position: relative;
+    }
+    .title_div {
+      float:left;
+      width: 10%;
+    }
+    .title {
+      writing-mode: vertical-rl;
+      font-size: 4rem;
+      white-space: pre;
+      
+    }
+
+    .content {
+      margin-top: 4rem;
+      width: 90%;
+      float: right;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+  }
+  /*MEDIDAS PARA TELEFONOS*/
+@media (min-width: 1440px) {
+
+  .title {
+    margin-left: 7rem;
+    padding: 3rem;
+    writing-mode: vertical-rl;
+    font-size: 9rem;
+    white-space: pre;
+    height: 70%;
+    padding-left: 10rem;
+    
+  }
+  .content {
+    font-size: 20rem;
+  }
+}
