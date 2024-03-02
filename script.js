@@ -65,8 +65,11 @@ function filtroNumber(valor) {
     }
 }
 function antiUndefined(a) {
-    if (a === undefined) {
-        return true
+    let b = [undefined, null];
+    for (let i in b) {
+        if (a[i] === b[i]) {
+            return true;
+        }
     }
 }
 // Se modifica la entrada desde el input
@@ -109,10 +112,14 @@ function leerIntento(){
     return intento;
 };
 
+function antiTRIM(a) {
+    let b = a
+    return b.trim()
+}
 // Funcion principal
 // ---------------FUNCION PRINCIPAL
 function principal(){
-    const INTENTO = leerIntento();
+    const INTENTO = antiTRIM(leerIntento());
     const ROW = document.createElement('div');
     ROW.className = 'row';
     let contenedor = document.getElementById('guesses');
@@ -126,26 +133,33 @@ function principal(){
         // Si el usuario no uso todos sus intentos
         intenta++ // Contador de intentos
         for (let i in palabra) {
-            console.log(intenta);
-            const SPAN = document.createElement('span');
-            SPAN.className = 'letter';
-            if (INTENTO[i] === palabra[i] ) {
-                SPAN.innerHTML = INTENTO[i]; // El cuadradito.
-                SPAN.style.color = "#FFFFFF";
-                SPAN.style.borderColor = VERDE;
-                SPAN.style.backgroundColor = VERDE; // El color del fondo
-            } else if (palabra.includes(INTENTO[i])) {
-                SPAN.innerHTML = INTENTO[i];
-                SPAN.style.color = "#FFFFFF";
-                SPAN.style.borderColor = AMARILLO;
-                SPAN.style.backgroundColor = AMARILLO;
+            if ((INTENTO[i] === ' ') || (INTENTO[i] === undefined) || (INTENTO[i] === "UNDEFINED") || (INTENTO[i] === "UNDEFINED")) {
+                terminar('Tienes espacios en blanco');
+                setTimeout(() => {
+                    location.reload()
+                }, 4000);
             } else {
-                SPAN.innerHTML = INTENTO[i];
-                SPAN.style.color = "#FFFFFF";
-                SPAN.style.borderColor = GRIS;
-                SPAN.style.backgroundColor = GRIS;
+                console.log(intenta);
+                const SPAN = document.createElement('span');
+                SPAN.className = 'letter';
+                if (INTENTO[i] === palabra[i] ) {
+                    SPAN.innerHTML = INTENTO[i]; // El cuadradito.
+                    SPAN.style.color = "#FFFFFF";
+                    SPAN.style.borderColor = VERDE;
+                    SPAN.style.backgroundColor = VERDE; // El color del fondo
+                } else if (palabra.includes(INTENTO[i])) {
+                    SPAN.innerHTML = INTENTO[i];
+                    SPAN.style.color = "#FFFFFF";
+                    SPAN.style.borderColor = AMARILLO;
+                    SPAN.style.backgroundColor = AMARILLO;
+                } else {
+                    SPAN.innerHTML = INTENTO[i];
+                    SPAN.style.color = "#FFFFFF";
+                    SPAN.style.borderColor = GRIS;
+                    SPAN.style.backgroundColor = GRIS;
+                }
+                ROW.appendChild(SPAN); // Se muetran los datos
             }
-            ROW.appendChild(SPAN); // Se muetran los datos
         } 
         grid.appendChild(ROW); // Se muestran los datos
 
@@ -179,3 +193,4 @@ function principal(){
         }
     }
 }
+
