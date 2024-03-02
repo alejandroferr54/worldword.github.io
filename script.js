@@ -64,7 +64,6 @@ function filtroNumber(valor) {
         }
     }
 }
-// MALDITA SEA EL SPACE BLANK QUE DESGRACIA
 function antiUndefined(a) {
     if (a === undefined) {
         return true
@@ -78,19 +77,13 @@ function updateValue(e) {
     let entrada = e.srcElement.textLength
     let fix = filtroNumber(filtro)
     if ((entrada === 5 || (fix === undefined))) {
-        if (antiUndefined(filtro) !== true) {
+        if ((fix !== false) || (filtro === undefined)) {
+            button.style.backgroundColor = "#494846";
+            button.disabled = false;
+        } else {
             button.disabled = true;
             button.style.backgroundColor = GRIS;
-        } else {
-            if ((fix !== false) || (filtro === undefined)) {
-                button.style.backgroundColor = "#494846";
-                button.disabled = false;
-            } else {
-                button.disabled = true;
-                button.style.backgroundColor = GRIS;
-            }
         }
-
     } else {
         button.disabled = true;
         button.style.backgroundColor = "#757370";
@@ -126,12 +119,14 @@ function principal(){
     let size = document.getElementById("guess-input").value;
     size = size.length;
     console.log(palabra + " <---- Palabra Correcta");
-    if ((size === 5) && (INTENTO !== palabra) && (intenta < intentos) ) { // Condicionales
+
+    if ((size === 5) && (INTENTO !== palabra) && (intenta < intentos) && (antiUndefined(INTENTO) !== true) ) { // Condicionales
         // Si el tamaño de la palabra es igual a 5 debe ser exacto
         // Si el intento es diferente de la palabra aleatoria
         // Si el usuario no uso todos sus intentos
         intenta++ // Contador de intentos
         for (let i in palabra) {
+            console.log(intenta);
             const SPAN = document.createElement('span');
             SPAN.className = 'letter';
             if (INTENTO[i] === palabra[i] ) {
@@ -184,4 +179,3 @@ function principal(){
         }
     }
 }
-
