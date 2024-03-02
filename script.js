@@ -121,7 +121,6 @@ function principal(){
         // Si el usuario no uso todos sus intentos
         intenta++ // Contador de intentos
         for (let i in palabra) {
-            console.log(intenta);
             const SPAN = document.createElement('span');
             SPAN.className = 'letter';
             if (INTENTO[i] === palabra[i] ) {
