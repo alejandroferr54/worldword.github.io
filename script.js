@@ -64,7 +64,12 @@ function filtroNumber(valor) {
         }
     }
 }
-
+// MALDITA SEA EL SPACE BLANK QUE DESGRACIA
+function antiUndefined(a) {
+    if (a === undefined) {
+        return true
+    }
+}
 // Se modifica la entrada desde el input
 // Si no tiene 5 caracteres no habilita su boton
 
@@ -73,13 +78,19 @@ function updateValue(e) {
     let entrada = e.srcElement.textLength
     let fix = filtroNumber(filtro)
     if ((entrada === 5 || (fix === undefined))) {
-        if ((fix !== false) || (filtro === undefined)) {
-            button.style.backgroundColor = "#494846";
-            button.disabled = false;
-        } else {
+        if (antiUndefined(filtro) !== true) {
             button.disabled = true;
             button.style.backgroundColor = GRIS;
+        } else {
+            if ((fix !== false) || (filtro === undefined)) {
+                button.style.backgroundColor = "#494846";
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+                button.style.backgroundColor = GRIS;
+            }
         }
+
     } else {
         button.disabled = true;
         button.style.backgroundColor = "#757370";
