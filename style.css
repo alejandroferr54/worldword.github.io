@@ -126,13 +126,14 @@ body::-webkit-scrollbar {
 
 
 
-
+/* MEDIDAS PARA TELEFONOS MUY CHICOS*/
 @media (min-width: 350px) {
   .title {
     font-family: "Anton", sans-serif;
     font-style: normal;
   }
   body {
+    overflow-y: scroll;
     margin: 1.2rem;
   }
   .textt {
