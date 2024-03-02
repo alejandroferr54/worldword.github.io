@@ -133,7 +133,7 @@ function principal(){
         // Si el usuario no uso todos sus intentos
         intenta++ // Contador de intentos
         for (let i in palabra) {
-            if ((INTENTO[i] === ' ') || (INTENTO[i] === undefined) || (INTENTO[i] === "UNDEFINED") || (INTENTO[i] === "UNDEFINED")) {
+            if ((INTENTO[i] === ' ') || (INTENTO[i] === undefined) || (INTENTO[i] === "UNDEFINED") || (INTENTO[i] === "undefined")) {
                 terminar('Tienes espacios en blanco');
                 setTimeout(() => {
                     location.reload()
